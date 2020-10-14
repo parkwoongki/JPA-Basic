@@ -1,5 +1,8 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
+
 import javax.persistence.*;
 
 public class JpaMain {
@@ -12,6 +15,10 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
+
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {
             tx.rollback(); // 에러시 롤백

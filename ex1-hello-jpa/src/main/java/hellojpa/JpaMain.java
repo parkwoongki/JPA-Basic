@@ -1,9 +1,6 @@
 package hellojpa;
 
 import javax.persistence.*;
-import javax.swing.plaf.metal.MetalMenuBarUI;
-import java.util.Arrays;
-import java.util.List;
 
 /*
     로그에 쿼리가 보이려면
@@ -100,13 +97,64 @@ public class JpaMain {
 //
 //            Member member1 = em.find(Member.class, 150L);
 
-            Member member = new Member();
-            member.setUsername("C");
+//            Member member = new Member();
+//            member.setUsername("C");
+//
+//            System.out.println("=====================");
+//            em.persist(member);
+//            System.out.println("member.getId() = " + member.getId());
+//            System.out.println("=====================");
 
-            System.out.println("=====================");
+
+            //== 연관 관계 ==//
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("Member1");
+////            member.setTeamId(team.getId());
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+
+            //
+//            Member findMember = em.find(Member.class, member.getId());
+//            Long findTeamId = findMember.getTeamId();
+//            Team findTeam = em.find(Team.class, findTeamId);
+            //// 이건 객체지향스럽지 않다.
+
+//            Member findMember = em.find(Member.class, member.getId());
+//            Team findTeam = findMember.getTeam();
+//            System.out.println("findTeam.getName() = " + findTeam.getName());
+
+//            Team newTeam = em.find(Team.class, 100L);
+//            findMember.setTeam(newTeam);
+
+//            Member findMember = em.find(Member.class, member.getId());
+//            List<Member> members = findMember.getTeam().getMembers();
+//
+//            for (Member m : members) {
+//                System.out.println("m.getUsername() = " + m.getUsername());
+//            }
+
+
+
+            //== 연관 관계 매핑 주인==//
+            Team team = new Team();
+            team.setName("TeamA");
+//            team.getMembers().add(member); // 안됨
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("Member1");
+            member.changeTeam(team);
             em.persist(member);
-            System.out.println("member.getId() = " + member.getId());
-            System.out.println("=====================");
+
+            em.flush();
+            em.clear();
 
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {
