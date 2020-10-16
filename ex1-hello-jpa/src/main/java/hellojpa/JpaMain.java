@@ -143,18 +143,30 @@ public class JpaMain {
 
 
             //== 연관 관계 매핑 주인==//
-            Team team = new Team();
-            team.setName("TeamA");
-//            team.getMembers().add(member); // 안됨
-            em.persist(team);
+//            Team team = new Team();
+//            team.setName("TeamA");
+////            team.getMembers().add(member); // 안됨
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("Member1");
+//            member.changeTeam(team);
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
 
-            Member member = new Member();
-            member.setUsername("Member1");
-            member.changeTeam(team);
-            em.persist(member);
-
-            em.flush();
-            em.clear();
+//            //== 일대다 ==//
+//            Member member = new Member();
+//            member.setUsername("asd");
+//
+//            em.persist(member);
+//
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            team.getMembers().add(member);
+//
+//            em.persist(team);
 
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {
