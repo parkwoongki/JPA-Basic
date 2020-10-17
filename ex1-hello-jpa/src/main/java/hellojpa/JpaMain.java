@@ -1,6 +1,7 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /*
     로그에 쿼리가 보이려면
@@ -167,6 +168,28 @@ public class JpaMain {
 //            team.getMembers().add(member);
 //
 //            em.persist(team);
+
+            //== 상속 매핑 ==//
+//            Movie movie = new Movie();
+//            movie.setDirector("aaaa");
+//            movie.setActor("bbbb");
+//            movie.setName("바람과함께 사라지다");
+//            movie.setPrice(10000);
+//
+//            em.persist(movie);
+//
+//            em.flush(); // 1차캐시 아무것도 안남게
+//            em.clear();
+//
+//            Movie findMovie = em.find(Movie.class, movie.getId());
+//            System.out.println("findMovie = " + findMovie);
+
+            Member member = new Member();
+            member.setUsername("user1");
+            member.setCreateBy("kim");
+            member.setCreateDate(LocalDateTime.now());
+
+            em.persist(member);
 
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {

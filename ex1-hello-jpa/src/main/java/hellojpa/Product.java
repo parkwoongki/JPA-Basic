@@ -13,7 +13,7 @@ public class Product {
 
     private String name;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "products")
     private List<Product> products = new ArrayList<>();
 
     public Long getId() {
