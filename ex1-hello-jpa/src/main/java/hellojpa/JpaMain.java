@@ -1,5 +1,7 @@
 package hellojpa;
 
+import org.hibernate.Hibernate;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -142,7 +144,6 @@ public class JpaMain {
 //            }
 
 
-
             //== 연관 관계 매핑 주인==//
 //            Team team = new Team();
 //            team.setName("TeamA");
@@ -184,21 +185,95 @@ public class JpaMain {
 //            Movie findMovie = em.find(Movie.class, movie.getId());
 //            System.out.println("findMovie = " + findMovie);
 
+//            Member member = new Member();
+//            member.setUsername("user1");
+//            member.setCreateBy("kim");
+//            member.setCreateDate(LocalDateTime.now());
+//
+//            em.persist(member);
+
+            /* 프록시 */
+//            Member member = em.find(Member.class, 1L);
+//            printMember(member); // 멤버만 가져오고 싶을때는? 여기서 팀까지 가져오면 낭비잖아?
+//            printMemberAndTeam(member);
+
             Member member = new Member();
-            member.setUsername("user1");
-            member.setCreateBy("kim");
-            member.setCreateDate(LocalDateTime.now());
+            member.setUsername("hello");
 
             em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            // 
+//            Member findMember = em.find(Member.class, member.getId());
+            Member findMember = em.getReference(Member.class, member.getId()); // 가짜엔티티 줌
+            System.out.println("before findMember class = " + findMember.getClass());
+            System.out.println("findMember.getId() = " + findMember.getId());
+            System.out.println("findMember.getUsername() = " + findMember.getUsername());
+            System.out.println("findMember.getUsername() = " + findMember.getUsername());
+            System.out.println("after findMember class = " + findMember.getClass()); // before after이 변하지 않는다. 타입 비교시에는 == 이 아니고 instance of를 이용해야한다.
+
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            em.persist(member1);
+
+            Member member2 = new Member();
+            member1.setUsername("member2");
+            em.persist(member2);
+
+            em.flush();
+            em.clear();
+
+            Member m1 = em.find(Member.class, member1.getId());
+            Member m2 = em.getReference(Member.class, member2.getId());
+
+//            System.out.println("(m1.getClass() == m2.getClass()) = " + (m1.getClass() == m2.getClass())); // find로 찾아온거랑 getReference로 찾아온거랑 다름 instance of를 써서 비교
+//            System.out.println("m1 = " + (m1 instanceof Member));
+//            System.out.println("m2 = " + (m2 instanceof Member));
+//
+//            Member m3 = em.find(Member.class, member1.getId());
+//            System.out.println("m3.getClass() = " + m3.getClass()); // 실제 Member임 프록시가 아니고
+//            Member reference = em.getReference(Member.class, member1.getId());
+//            System.out.println("reference.getClass() = " + reference.getClass()); // 근데 이것도 똑같이 Member임 1. 캐시에서 가져오는게 성능 더낫
+//            // 2.
+//            System.out.println("a == a : " + (m3 == reference)); // 자바 컬렉션처럼 되는거라 true반환해야함 이걸 프록시로 가져오면 타입조차 안맞으니 안된다.
+
+            /* 영속성 컨텍스트 초기화되면? */
+//            em.detach(m2); // m2 더이상 영속컨텍에서 관리안해. e.printStackTrace를 보면
+//            em.close();
+//            em.clear();
+//            System.out.println("m2.getUsername() = " + m2.getUsername()); // ㅣLazyInitializationException 뜬다.
+
+            /* 초기화가 됬는지 안됬는지 알수있는것들 */
+            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(m2));
+//            m2.getUsername(); // 강제 초기화1
+//            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(m2));
+            Hibernate.initialize(m2); // 강제 초기화2
+            System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(m2));
 
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {
             tx.rollback(); // 에러시 롤백
+            e.printStackTrace();
         } finally {
             em.close();
         }
 
         emf.close();
     }
+
+    /* 프록시 */
+//    private static void printMember(Member member) {
+//        System.out.println("member.setUsername(); = " + member.setUsername(););
+//    }
+//
+//    private static void printMemberAndTeam(Member member) {
+//        String username = member.getUsername();
+//        System.out.println("username = " + username);
+//
+//        Team team = member.getTeam();
+//        System.out.println("team.getName() = " + team.getName());
+//    }
 
 }

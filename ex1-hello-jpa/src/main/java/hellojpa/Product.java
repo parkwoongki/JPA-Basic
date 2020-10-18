@@ -13,8 +13,8 @@ public class Product {
 
     private String name;
 
-    @OneToMany(mappedBy = "products")
-    private List<Product> products = new ArrayList<>();
+//    @OneToMany(mappedBy = "products")
+//    private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
