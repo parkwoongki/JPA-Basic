@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Member extends BaseEntity{
+public class Member /*extends BaseEntity*/ {
 
     @Id
     @GeneratedValue
@@ -21,8 +21,9 @@ public class Member extends BaseEntity{
 //    @Column(name = "TEAM_ID")
 //    private Long teamId;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 야메로 읽기전용으로 만들어버린것
+    @ManyToOne(fetch = FetchType.LAZY) // EAGER은 즉시 가져오는 것
+//    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 야메로 읽기전용으로 만들어버린것
+    @JoinColumn
     private Team team;
 
 //    @OneToOne
@@ -31,6 +32,36 @@ public class Member extends BaseEntity{
 //
 //    @OneToMany(mappedBy = "member")
 //    private List<MemberProduct> products = new ArrayList<>();
+
+    @Embedded
+    private Period workPeriod;
+
+    @Embedded
+    private Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city",column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workAddress;
+
+    public Period getWorkPeriod() {
+        return workPeriod;
+    }
+
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
+    }
 
     public Long getId() {
         return id;
