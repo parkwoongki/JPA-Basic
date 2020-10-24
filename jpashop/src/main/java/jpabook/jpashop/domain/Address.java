@@ -1,43 +1,43 @@
-package hellojpa;
+package jpabook.jpashop.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.Objects;
 
 @Embeddable
 public class Address {
+
+    @Column(length = 10)
     private String city;
+
+    @Column(length = 20)
     private String street;
+
+    @Column(length = 5)
     private String zipcode;
 
-//    private Member member; 엔티티 들어올수 있다.
-
-    public Address() {
-    }
-
-    public Address(String city, String street, String zipcode) {
-        this.city = city;
-        this.street = street;
-        this.zipcode = zipcode;
+    public String fullAddress() {
+        return getCity() + ", " + getStreet() + ", " + getZipcode();
     }
 
     public String getCity() {
         return city;
     }
 
-    private void setCity(String city) {
-        this.city = city;
-    }
-
     public String getStreet() {
         return street;
     }
 
-    private void setStreet(String street) {
-        this.street = street;
-    }
-
     public String getZipcode() {
         return zipcode;
+    }
+
+    private void setCity(String city) {
+        this.city = city;
+    }
+
+    private void setStreet(String street) {
+        this.street = street;
     }
 
     private void setZipcode(String zipcode) {
@@ -51,7 +51,7 @@ public class Address {
         Address address = (Address) o;
         return Objects.equals(getCity(), address.getCity()) &&
                 Objects.equals(getStreet(), address.getStreet()) &&
-                Objects.equals(getZipcode(), address.getZipcode());
+                Objects.equals(getZipcode(), address.getZipcode()); // 게터로 해야 프록시 문제 없음 무조건 게터, 메서드를 통해서 해야함
     }
 
     @Override

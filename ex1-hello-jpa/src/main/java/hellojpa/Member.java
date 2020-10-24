@@ -3,9 +3,7 @@ package hellojpa;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Member /*extends BaseEntity*/ {
@@ -39,13 +37,39 @@ public class Member /*extends BaseEntity*/ {
     @Embedded
     private Address homeAddress;
 
-    @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "city",column = @Column(name = "WORK_CITY")),
-            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
-            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
-    })
-    private Address workAddress;
+    @ElementCollection
+    @CollectionTable(name = "FAVORITE_FOOD", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    @Column(name = "FOOD_NAME") // 하나 짜리는 예외적으로 가능함
+    private Set<String> favoriteFoods= new HashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    private List<Address> addressHistory = new ArrayList<>();
+
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "city",column = @Column(name = "WORK_CITY")),
+//            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+//            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+//    })
+//    private Address workAddress;
+
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public void setFavoriteFoods(Set<String> favoriteFoods) {
+        this.favoriteFoods = favoriteFoods;
+    }
+
+    public List<Address> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<Address> addressHistory) {
+        this.addressHistory = addressHistory;
+    }
 
     public Period getWorkPeriod() {
         return workPeriod;
