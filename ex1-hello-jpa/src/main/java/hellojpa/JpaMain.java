@@ -342,52 +342,60 @@ public class JpaMain {
 //            // 값을 바꾸고 싶으면? new 로 다시만들어서 get으로 복사하고 넣어라/.
 
             //==값 타입 컬렉션==//
-            Member member1 = new Member();
-            member1.setUsername("member1");
-            member1.setHomeAddress(new Address("city1", "street", "10000"));
-
-            member1.getFavoriteFoods().add("치킨");
-            member1.getFavoriteFoods().add("족발");
-            member1.getFavoriteFoods().add("피자");
-
-            member1.getAddressHistory().add(new Address("old1", "street", "10000"));
-            member1.getAddressHistory().add(new Address("old2", "street", "10000"));
-
-            em.persist(member1);
-            
-            em.flush();
-            em.clear();
-
-            Member findMember = em.find(Member.class, member1.getId()); // 컬렉션으로 된건 다 지연로딩으로 가져와진다.
-            System.out.println("==============================");
-
-            /*조회*/
-//            List<Address> addressHistory = findMember.getAddressHistory();
-//            for (Address address : addressHistory) {
-//                System.out.println("address = " + address.getCity());
-//            }
+//            Member member1 = new Member();
+//            member1.setUsername("member1");
+//            member1.setHomeAddress(new Address("city1", "street", "10000"));
 //
-//            Set<String> favoriteFoods = findMember.getFavoriteFoods();
-//            for (String favoriteFood : favoriteFoods) {
-//                System.out.println("favoriteFood = " + favoriteFood);
-//            }
+//            member1.getFavoriteFoods().add("치킨");
+//            member1.getFavoriteFoods().add("족발");
+//            member1.getFavoriteFoods().add("피자");
 //
+//            member1.getAddressHistory().add(new Address("old1", "street", "10000"));
+//            member1.getAddressHistory().add(new Address("old2", "street", "10000"));
+//
+//            em.persist(member1);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member findMember = em.find(Member.class, member1.getId()); // 컬렉션으로 된건 다 지연로딩으로 가져와진다.
 //            System.out.println("==============================");
+//
+//            /*조회*/
+////            List<Address> addressHistory = findMember.getAddressHistory();
+////            for (Address address : addressHistory) {
+////                System.out.println("address = " + address.getCity());
+////            }
+////
+////            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+////            for (String favoriteFood : favoriteFoods) {
+////                System.out.println("favoriteFood = " + favoriteFood);
+////            }
+////
+////            System.out.println("==============================");
+//
+//            /* 수정 */
+////            findMember.getHomeAddress().setCity("newCity"); // 안된다 값타입은 이뮤터블 해야함
+//            Address a = findMember.getHomeAddress();
+//            findMember.setHomeAddress(new Address("newCity!", a.getStreet(), a.getZipcode()));
+//
+//            findMember.getFavoriteFoods().remove("치킨");
+//            findMember.getFavoriteFoods().add("한식");
+//
+//            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
+//            findMember.getAddressHistory().add(new Address("newCity!!@~", "street", "10000"));
+//            // 근데 이거 문제가 컬렉션 싹 삭제하고 쿼리 건수 만큼 나감
+//            // => 이거 말고 일대다 관계를 쓰자
+//
+//            // 그럼 언제써? 체크박스 같은거 [치킨, 피자] 이렇게 단순한거만 할때!! update칠필요가 없을떄!! 정말 단순한것만 쓰자
 
-            /* 수정 */
-//            findMember.getHomeAddress().setCity("newCity"); // 안된다 값타입은 이뮤터블 해야함
-            Address a = findMember.getHomeAddress();
-            findMember.setHomeAddress(new Address("newCity!", a.getStreet(), a.getZipcode()));
 
-            findMember.getFavoriteFoods().remove("치킨");
-            findMember.getFavoriteFoods().add("한식");
 
-            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
-            findMember.getAddressHistory().add(new Address("newCity!!@~", "street", "10000"));
-            // 근데 이거 문제가 컬렉션 싹 삭제하고 쿼리 건수 만큼 나감
-            // => 이거 말고 일대다 관계를 쓰자
+            //==JPQL==//
+            List<Member> result = em.createQuery("select m from Member m where m.username like '%kim%'",
+                    Member.class
+            ).getResultList();
 
-            // 그럼 언제써? 체크박스 같은거 [치킨, 피자] 이렇게 단순한거만 할때!! update칠필요가 없을떄!! 정말 단순한것만 쓰자
 
 
             tx.commit(); // 커밋안하면 반영이 안된다
