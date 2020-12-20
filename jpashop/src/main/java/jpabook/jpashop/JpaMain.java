@@ -1,10 +1,12 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Book;
+import jpabook.jpashop.domain.Item;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.*;
+import java.util.List;
 
 public class JpaMain {
 
@@ -24,6 +26,8 @@ public class JpaMain {
             book.setName("JPA");
             book.setAuthor("김영한");
             em.persist(book);
+
+            em.createQuery("select i from Item i where type(i) = Book", Item.class).getResultList();
 
             tx.commit(); // 커밋안하면 반영이 안된다
         } catch (Exception e) {
