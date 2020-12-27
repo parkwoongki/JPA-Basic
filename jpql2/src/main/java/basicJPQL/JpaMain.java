@@ -1,3 +1,5 @@
+package basicJPQL;
+
 import jpql.Member;
 
 import javax.persistence.*;

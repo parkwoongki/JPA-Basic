@@ -1,5 +1,6 @@
+package basicJPQL;
+
 import jpql.Member;
-import jpql.MemberType;
 import jpql.Team;
 
 import javax.persistence.EntityManager;
@@ -8,7 +9,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class TypeMain {
+public class JoinMain {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
@@ -26,10 +27,9 @@ public class TypeMain {
             em.persist(team2);
 
             Member member = new Member();
-            member.setUsername("member1");
-//            member.setUsername("team1");
+//            member.setUsername("member1");
+            member.setUsername("team1");
             member.setAge(10);
-            member.setType(MemberType.ADMIN);
             member.changeTeam(team1);
             member.changeTeam(team2);
 
@@ -38,17 +38,17 @@ public class TypeMain {
             em.flush();
             em.clear();
 
-            String jpql = "select m.username, 'HELLO', true from Member m " +
-                          "where m.type = :userType";
-            List<Object[]> result = em.createQuery(jpql)
-                    .setParameter("userType", MemberType.ADMIN)
+//            String jpql = "select m from Member m inner join m.team t where t.name = :teamName";
+//            String jpql = "select m from Member m left outer join m.team t";
+//            String jpql = "select m from Member m left join m.team t";
+//            String jpql = "select m from Member m, Team t where m.username = t.name";
+            String jpql = "select m from Member m left join Team t on m.username = t.name";
+            List<Member> result = em.createQuery(jpql, Member.class)
                     .getResultList();
 
             System.out.println("result.size() = " + result.size());
-            for (Object[] objects : result) {
-                System.out.println("objects[0] = " + objects[0]);
-                System.out.println("objects[0] = " + objects[1]);
-                System.out.println("objects[0] = " + objects[2]);
+            for (Member member1 : result) {
+                System.out.println("team = " + member1.getTeam().getName());
             }
 
             tx.commit();

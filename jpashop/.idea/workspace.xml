@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8122f8ac-ae63-45eb-98c1-dbd9f23071c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/ValueMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/src/main/java/hellojpa/ValueMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/JpaMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Period.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/Period.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/ValueMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ex1-hello-jpa/target/classes/hellojpa/ValueMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpabook/jpashop/domain/Delivery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpabook/jpashop/domain/Delivery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jpabook/jpashop/domain/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jpabook/jpashop/domain/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/CaseMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/CaseMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/FunctionMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/FunctionMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/JoinMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/JoinMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/JpaMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/PagingMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/PagingMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/SelectMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/SelectMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/TypeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/TypeMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/CaseMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/FunctionMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/JoinMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/JpaMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/PagingMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/SelectMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/TypeMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Team.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +42,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1igbjDZqUJgBOEvX3OTfB858wui" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -68,6 +85,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

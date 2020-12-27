@@ -1,3 +1,5 @@
+package basicJPQL;
+
 import jpql.Member;
 import jpql.MemberType;
 import jpql.Team;
