@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8122f8ac-ae63-45eb-98c1-dbd9f23071c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/CaseMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/CaseMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/FunctionMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/FunctionMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/JoinMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/JoinMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/PagingMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/PagingMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/SelectMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/SelectMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/TypeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/basicJPQL/TypeMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/java/jpql/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/CaseMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/FunctionMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/JoinMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/JpaMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/PagingMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/SelectMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/TypeMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Team.class" beforeDir="false" afterPath="$PROJECT_DIR$/../jpql2/target/classes/jpql/Team.class" afterDir="false" />
-    </list>
+    <list default="true" id="8122f8ac-ae63-45eb-98c1-dbd9f23071c0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
